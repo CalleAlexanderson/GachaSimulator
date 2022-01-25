@@ -1,4 +1,6 @@
-﻿Console.ForegroundColor = ConsoleColor.DarkMagenta;
+﻿using System.Runtime.CompilerServices;
+
+Console.ForegroundColor = ConsoleColor.DarkMagenta;
 System.Console.WriteLine("EPIC");
 Console.ForegroundColor = ConsoleColor.White;
 System.Console.WriteLine("COMMON");
@@ -11,6 +13,10 @@ System.Console.WriteLine("UNCOMMON");
 Console.ForegroundColor = ConsoleColor.White;
 
 Dictionary<string, int> myLoot = new Dictionary<string, int>();
+
+GachaSpin.Gacha();
+
+Inventory inventory = new Inventory();
 
 myLoot.Add("Sword1", 0);
 myLoot.Add("Sword2", 0);

@@ -1,10 +1,9 @@
 
-namespace GachaSimulator
+
+
+public class Item
 {
-    public class Item
-    {
-        private int value;
-        private int rarity;
-        private string name = "";
-    }
+    private int value;
+    private int rarity;
+    private string name = "";
 }
