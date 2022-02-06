@@ -1,9 +1,13 @@
-
-
-
 public class Item
 {
-    private int value;
-    private int rarity;
-    private string name = "";
+    protected int value;
+    protected string rarity = "";
+    protected string name = "";
+
+    public void ItemInfo()
+    {
+
+    }
 }
+
+

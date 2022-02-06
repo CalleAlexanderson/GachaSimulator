@@ -11,7 +11,7 @@ public class GachaSpin
 
     }
 
-    public static Item Gacha()
+    public static string Gacha()
     {
         int spinResult = generator.Next(1, 1001);
         int commonResult = generator.Next(1, 9);
@@ -20,9 +20,9 @@ public class GachaSpin
         int epicResult = generator.Next(1, 9);
         int legendaryResult = generator.Next(1, 6);
         string loot = "";
+
         if (spinResult >= 1 && spinResult <= 500)
         {
-            System.Console.WriteLine("common");
             if (commonResult == 1)
             {
                 loot = "longsword";
@@ -58,7 +58,6 @@ public class GachaSpin
         }
         else if (spinResult >= 501 && spinResult <= 850)
         {
-            System.Console.WriteLine("uncommon");
             if (uncommonResult == 1)
             {
                 loot = "mace";
@@ -95,7 +94,6 @@ public class GachaSpin
         }
         else if (spinResult >= 851 && spinResult <= 950)
         {
-            System.Console.WriteLine("rare");
             if (uncommonResult == 1)
             {
                 loot = "morningstar";
@@ -123,7 +121,6 @@ public class GachaSpin
         }
         else if (spinResult >= 951 && spinResult <= 985)
         {
-            System.Console.WriteLine("epic");
             if (uncommonResult == 1)
             {
                 loot = "fengHuoLun";
@@ -159,7 +156,6 @@ public class GachaSpin
         }
         else if (spinResult >= 986 && spinResult <= 1000)
         {
-            System.Console.WriteLine("legendary");
             if (uncommonResult == 1)
             {
                 loot = "greenDragonCrescentBlade";
@@ -181,11 +177,7 @@ public class GachaSpin
                 loot = "gungnir";
             }
         }
-        Inventory.UpdateInventory(loot);
-        System.Console.WriteLine(loot);
-        Item car = new Item();
-        Item resultItem = car;
-        return (resultItem);
+        return (loot);
     }
 }
 

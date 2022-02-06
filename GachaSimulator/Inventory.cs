@@ -6,154 +6,215 @@ public class Inventory
 
     public Inventory()
     {
-        for (int i = 1; i < 36; i++)
+        weaponInventory.Add("Longsword", 0);
+        weaponInventory.Add("Shortsword", 0);
+        weaponInventory.Add("Club", 0);
+        weaponInventory.Add("Battle Axe", 0);
+        weaponInventory.Add("Pike", 0);
+        weaponInventory.Add("Halbread", 0);
+        weaponInventory.Add("Longbow", 0);
+        weaponInventory.Add("ShortBow", 0);
+        weaponInventory.Add("Mace", 0);
+        weaponInventory.Add("War Hammer", 0);
+        weaponInventory.Add("Rapier", 0);
+        weaponInventory.Add("Falchion", 0);
+        weaponInventory.Add("Lance", 0);
+        weaponInventory.Add("Man Catcher", 0);
+        weaponInventory.Add("Crossbow", 0);
+        weaponInventory.Add("Claymore", 0);
+        weaponInventory.Add("Morningstar", 0);
+        weaponInventory.Add("Katana", 0);
+        weaponInventory.Add("Flamberge", 0);
+        weaponInventory.Add("War Scythe", 0);
+        weaponInventory.Add("Glaive", 0);
+        weaponInventory.Add("Reapeting Crossbow", 0);
+        weaponInventory.Add("Feng Hou Lun", 0);
+        weaponInventory.Add("Mubuchae", 0);
+        weaponInventory.Add("Lùjiǎodāo", 0);
+        weaponInventory.Add("Shamshir", 0);
+        weaponInventory.Add("Tachi", 0);
+        weaponInventory.Add("Ninjatō", 0);
+        weaponInventory.Add("Naginata", 0);
+        weaponInventory.Add("Guandao", 0);
+        weaponInventory.Add("Green Dragon Crescent Blade", 0);
+        weaponInventory.Add("Dáinsleif", 0);
+        weaponInventory.Add("Excalibur", 0);
+        weaponInventory.Add("Vajra", 0);
+        weaponInventory.Add("Gungnir", 0);
+
+    }
+
+    public static void CheckInventory()
+    {
+        //tog från https://www.tutorialsteacher.com/csharp/csharp-dictionary 
+        for (int i = 0; i < weaponInventory.ToList().Count; i++)
         {
-            weaponInventory.Add(i.ToString(), 0);
-            System.Console.WriteLine(i.ToString());
+            if (i <= 7)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            else if (i >= 8 && i <= 15)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else if (i >= 16 && i <= 21)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else if (i >= 22 && i <= 29)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            }
+            else if (i >= 30 && i <= 35)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+            Console.WriteLine("{0}, Own: {1}\n", weaponInventory.ElementAt(i).Key, weaponInventory.ElementAt(i).Value); //skriver ut hur många jag har av varje
         }
+
     }
 
     public static void UpdateInventory(string loot)
     {
         if (loot == "longsword") //common
         {
-            weaponInventory["1"] += 1;
+            weaponInventory["Longsword"] += 1;
         }
         else if (loot == "shortsword") //common
         {
-            weaponInventory["2"] += 1;
+            weaponInventory["Shortsword"] += 1;
         }
         else if (loot == "club") //common
         {
-            weaponInventory["3"] += 1;
+            weaponInventory["Club"] += 1;
         }
         else if (loot == "battleAxe") //common
         {
-            weaponInventory["4"] += 1;
+            weaponInventory["Battle Axe"] += 1;
         }
         else if (loot == "pike") //common
         {
-            weaponInventory["5"] += 1;
+            weaponInventory["Pike"] += 1;
         }
         else if (loot == "halbred") //common
         {
-            weaponInventory["6"] += 1;
+            weaponInventory["Halbred"] += 1;
         }
         else if (loot == "longbow") //common
         {
-            weaponInventory["7"] += 1;
+            weaponInventory["Longbow"] += 1;
         }
         else if (loot == "shortbow") //common
         {
-            weaponInventory["8"] += 1;
+            weaponInventory["Shortbow"] += 1;
         }
         else if (loot == "mace") //uncommon
         {
-            weaponInventory["9"] += 1;
+            weaponInventory["Mace"] += 1;
         }
         else if (loot == "warHammer") //uncommon
         {
-            weaponInventory["10"] += 1;
+            weaponInventory["War Hammer"] += 1;
         }
         else if (loot == "rapier") //uncommon
         {
-            weaponInventory["11"] += 1;
+            weaponInventory["Rapier"] += 1;
         }
         else if (loot == "falchion") //uncommon
         {
-            weaponInventory["12"] += 1;
+            weaponInventory["Falchion"] += 1;
         }
         else if (loot == "lance") //uncommon
         {
-            weaponInventory["13"] += 1;
+            weaponInventory["Lance"] += 1;
         }
         else if (loot == "manCatcher") //uncommon
         {
-            weaponInventory["14"] += 1;
+            weaponInventory["Man Catcher"] += 1;
         }
         else if (loot == "crossbow") //uncommon
         {
-            weaponInventory["15"] += 1;
+            weaponInventory["Crossbow"] += 1;
         }
         else if (loot == "claymore") //uncommon
         {
-            weaponInventory["16"] += 1;
+            weaponInventory["Claymore"] += 1;
         }
         else if (loot == "morningstar") //rare
         {
-            weaponInventory["17"] += 1;
+            weaponInventory["Morningstar"] += 1;
         }
         else if (loot == "katana") //rare
         {
-            weaponInventory["18"] += 1;
+            weaponInventory["Katana"] += 1;
         }
         else if (loot == "flamberge") //rare
         {
-            weaponInventory["19"] += 1;
+            weaponInventory["Flamberge"] += 1;
         }
         else if (loot == "warScythe") //rare
         {
-            weaponInventory["20"] += 1;
+            weaponInventory["War Scythe"] += 1;
         }
         else if (loot == "glaive") //rare
         {
-            weaponInventory["21"] += 1;
+            weaponInventory["Glaive"] += 1;
         }
         else if (loot == "reapetingCrossbow") //rare
         {
-            weaponInventory["22"] += 1;
+            weaponInventory["Reapeting Crossbow"] += 1;
         }
         else if (loot == "fengHuoLun") //epic
         {
-            weaponInventory["23"] += 1;
+            weaponInventory["Feng Hou Lun"] += 1;
         }
         else if (loot == "mubuchae") //epic
         {
-            weaponInventory["24"] += 1;
+            weaponInventory["Mubuchae"] += 1;
         }
         else if (loot == "lùjiǎodāo") //epic
         {
-            weaponInventory["25"] += 1;
+            weaponInventory["Lùjiǎodāo"] += 1;
         }
         else if (loot == "shamshir") //epic
         {
-            weaponInventory["26"] += 1;
+            weaponInventory["Shamshir"] += 1;
         }
         else if (loot == "tachi") //epic
         {
-            weaponInventory["27"] += 1;
+            weaponInventory["Tachi"] += 1;
         }
         else if (loot == "ninjatō") //epic
         {
-            weaponInventory["28"] += 1;
+            weaponInventory["Ninjatō"] += 1;
         }
         else if (loot == "naginata") //epic
         {
-            weaponInventory["29"] += 1;
+            weaponInventory["Naginata"] += 1;
         }
-        else if (loot == "Guandao") //epic
+        else if (loot == "guandao") //epic
         {
-            weaponInventory["30"] += 1;
+            weaponInventory["Guandao"] += 1;
         }
         else if (loot == "greenDragonCrescentBlade") //legendary
         {
-            weaponInventory["31"] += 1;
+            weaponInventory["Green Dragon Crescent Blade"] += 1;
         }
         else if (loot == "dáinsleif") //legendary
         {
-            weaponInventory["32"] += 1;
+            weaponInventory["Dáinsleif"] += 1;
         }
         else if (loot == "excalibur") //legendary
         {
-            weaponInventory["33"] += 1;
+            weaponInventory["Excalibur"] += 1;
         }
         else if (loot == "vajra") //legendary
         {
-            weaponInventory["34"] += 1;
+            weaponInventory["Vajra"] += 1;
         }
         else if (loot == "gungnir") //legendary
         {
-            weaponInventory["35"] += 1;
+            weaponInventory["Gungnir"] += 1;
         }
     }
 
