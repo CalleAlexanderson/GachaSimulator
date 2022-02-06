@@ -15,14 +15,12 @@ Inventory inventory = new Inventory();
 
 string input = "";
 
-// inventory.UpdateInventory(GachaSpin.Gacha());
-
 while (input != "end")
 {
     input = Console.ReadLine();
     if (input == "spin")
     {
-        System.Console.WriteLine(GachaSpin.Gacha());
+        Inventory.UpdateInventory(GachaSpin.Gacha());
     }
     else if (input == "inventory")
     {

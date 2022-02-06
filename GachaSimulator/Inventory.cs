@@ -13,7 +13,7 @@ public class Inventory
         weaponInventory.Add("Pike", 0);
         weaponInventory.Add("Halbread", 0);
         weaponInventory.Add("Longbow", 0);
-        weaponInventory.Add("ShortBow", 0);
+        weaponInventory.Add("Shortbow", 0);
         weaponInventory.Add("Mace", 0);
         weaponInventory.Add("War Hammer", 0);
         weaponInventory.Add("Rapier", 0);

@@ -1,7 +1,6 @@
 using System;
 
 
-
 public class GachaSpin
 {
     private static Random generator = new Random();
@@ -58,6 +57,7 @@ public class GachaSpin
         }
         else if (spinResult >= 501 && spinResult <= 850)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             if (uncommonResult == 1)
             {
                 loot = "mace";
@@ -94,6 +94,7 @@ public class GachaSpin
         }
         else if (spinResult >= 851 && spinResult <= 950)
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             if (uncommonResult == 1)
             {
                 loot = "morningstar";
@@ -121,6 +122,7 @@ public class GachaSpin
         }
         else if (spinResult >= 951 && spinResult <= 985)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             if (uncommonResult == 1)
             {
                 loot = "fengHuoLun";
@@ -156,6 +158,7 @@ public class GachaSpin
         }
         else if (spinResult >= 986 && spinResult <= 1000)
         {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (uncommonResult == 1)
             {
                 loot = "greenDragonCrescentBlade";
@@ -177,6 +180,8 @@ public class GachaSpin
                 loot = "gungnir";
             }
         }
+        System.Console.WriteLine(loot);
+        Console.ForegroundColor = ConsoleColor.White;
         return (loot);
     }
 }
