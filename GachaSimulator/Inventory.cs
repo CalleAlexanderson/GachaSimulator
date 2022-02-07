@@ -27,7 +27,7 @@ public class Inventory
         weaponInventory.Add("Flamberge", 0);
         weaponInventory.Add("War Scythe", 0);
         weaponInventory.Add("Glaive", 0);
-        weaponInventory.Add("Reapeting Crossbow", 0);
+        weaponInventory.Add("Repeating Crossbow", 0);
         weaponInventory.Add("Feng Hou Lun", 0);
         weaponInventory.Add("Mubuchae", 0);
         weaponInventory.Add("Lùjiǎodāo", 0);
@@ -160,9 +160,9 @@ public class Inventory
         {
             weaponInventory["Glaive"] += 1;
         }
-        else if (loot == "Reapeting Crossbow") //rare
+        else if (loot == "Repeating Crossbow") //rare
         {
-            weaponInventory["Reapeting Crossbow"] += 1;
+            weaponInventory["Repeating Crossbow"] += 1;
         }
         else if (loot == "Feng Huo Lun") //epic
         {
