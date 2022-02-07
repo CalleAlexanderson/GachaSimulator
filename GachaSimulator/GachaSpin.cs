@@ -24,35 +24,35 @@ public class GachaSpin
         {
             if (commonResult == 1)
             {
-                loot = "longsword";
+                loot = "Longsword";
             }
             else if (commonResult == 2)
             {
-                loot = "shortsword";
+                loot = "Shortsword";
             }
             else if (commonResult == 3)
             {
-                loot = "club";
+                loot = "Club";
             }
             else if (commonResult == 4)
             {
-                loot = "battleAxe";
+                loot = "Battle Axe";
             }
             else if (commonResult == 5)
             {
-                loot = "pike";
+                loot = "Pike";
             }
             else if (commonResult == 6)
             {
-                loot = "halbred";
+                loot = "Halbred";
             }
             else if (commonResult == 7)
             {
-                loot = "longbow";
+                loot = "Longbow";
             }
             else if (commonResult == 8)
             {
-                loot = "shortbow";
+                loot = "Shortbow";
             }
         }
         else if (spinResult >= 501 && spinResult <= 850)
@@ -60,35 +60,35 @@ public class GachaSpin
             Console.ForegroundColor = ConsoleColor.Green;
             if (uncommonResult == 1)
             {
-                loot = "mace";
+                loot = "Mace";
             }
             else if (uncommonResult == 2)
             {
-                loot = "warHammer";
+                loot = "War Hammer";
             }
             else if (uncommonResult == 3)
             {
-                loot = "rapier";
+                loot = "Rapier";
             }
             else if (uncommonResult == 4)
             {
-                loot = "falchion";
+                loot = "Falchion";
             }
             else if (uncommonResult == 5)
             {
-                loot = "lance";
+                loot = "Lance";
             }
             else if (uncommonResult == 6)
             {
-                loot = "manCatcher";
+                loot = "Man Catcher";
             }
             else if (uncommonResult == 7)
             {
-                loot = "crossbow";
+                loot = "Crossbow";
             }
             else if (uncommonResult == 8)
             {
-                loot = "claymore";
+                loot = "Claymore";
             }
 
         }
@@ -97,27 +97,27 @@ public class GachaSpin
             Console.ForegroundColor = ConsoleColor.Blue;
             if (uncommonResult == 1)
             {
-                loot = "morningstar";
+                loot = "Morningstar";
             }
             else if (uncommonResult == 2)
             {
-                loot = "katana";
+                loot = "Katana";
             }
             else if (uncommonResult == 3)
             {
-                loot = "flamberge";
+                loot = "Flamberge";
             }
             else if (uncommonResult == 4)
             {
-                loot = "warScythe";
+                loot = "War Scythe";
             }
             else if (uncommonResult == 5)
             {
-                loot = "glaive";
+                loot = "Glaive";
             }
             else if (uncommonResult == 6)
             {
-                loot = "repeatingCrossbow";
+                loot = "Repeating Crossbow";
             }
         }
         else if (spinResult >= 951 && spinResult <= 985)
@@ -125,31 +125,31 @@ public class GachaSpin
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             if (uncommonResult == 1)
             {
-                loot = "fengHuoLun";
+                loot = "Feng Huo Lun";
             }
             else if (uncommonResult == 2)
             {
-                loot = "mubuchae";
+                loot = "Mubuchae";
             }
             else if (uncommonResult == 3)
             {
-                loot = "lùjiǎodāo";
+                loot = "Lùjiǎodāo";
             }
             else if (uncommonResult == 4)
             {
-                loot = "shamshir";
+                loot = "Shamshir";
             }
             else if (uncommonResult == 5)
             {
-                loot = "tachi";
+                loot = "Tachi";
             }
             else if (uncommonResult == 6)
             {
-                loot = "ninjatō";
+                loot = "Ninjatō";
             }
             else if (uncommonResult == 7)
             {
-                loot = "naginata";
+                loot = "Naginata";
             }
             else if (uncommonResult == 8)
             {
@@ -161,23 +161,23 @@ public class GachaSpin
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (uncommonResult == 1)
             {
-                loot = "greenDragonCrescentBlade";
+                loot = "Green Dragon Crescent Blade";
             }
             else if (uncommonResult == 2)
             {
-                loot = "dáinsleif";
+                loot = "Dáinsleif";
             }
             else if (uncommonResult == 3)
             {
-                loot = "excalibur";
+                loot = "Excalibur";
             }
             else if (uncommonResult == 4)
             {
-                loot = "vajra";
+                loot = "Vajra";
             }
             else if (uncommonResult == 5)
             {
-                loot = "gungnir";
+                loot = "Gungnir";
             }
         }
         System.Console.WriteLine(loot);

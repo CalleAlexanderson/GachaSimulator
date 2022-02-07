@@ -18,7 +18,7 @@ string input = "";
 while (input != "end")
 {
     input = Console.ReadLine();
-    if (input == "spin")
+    if (input == "")
     {
         Inventory.UpdateInventory(GachaSpin.Gacha());
     }
