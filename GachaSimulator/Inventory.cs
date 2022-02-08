@@ -71,6 +71,7 @@ public class Inventory
             }
             Console.WriteLine("{0}, Own: {1}\n", weaponInventory.ElementAt(i).Key, weaponInventory.ElementAt(i).Value); //skriver ut hur många jag har av varje
         }
+        Console.ForegroundColor = ConsoleColor.White;
 
     }
 
