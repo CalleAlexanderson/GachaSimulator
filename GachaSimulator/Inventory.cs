@@ -1,8 +1,6 @@
 public class Inventory
 {
-
     private static Dictionary<string, int> weaponInventory = new Dictionary<string, int>();
-
 
     public Inventory()
     {
@@ -46,6 +44,7 @@ public class Inventory
 
     public static void CheckInventory()
     {
+        Console.Clear();
         //tog från https://www.tutorialsteacher.com/csharp/csharp-dictionary 
         for (int i = 0; i < weaponInventory.ToList().Count; i++)
         {

@@ -24,7 +24,5 @@ public class SilkRoad
         System.Console.WriteLine($"Legendary weapons in stock: \n Green Dragon Crescent Blade {dr}\n Dáinsleif {dr}\n Excalibur {dr}\n Vajra {dr}\n Gungnir {dr}");
         Console.ForegroundColor = ConsoleColor.White;
         System.Console.WriteLine(); //blankspace
-
-
     }
 }
