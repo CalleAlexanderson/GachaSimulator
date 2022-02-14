@@ -5,11 +5,6 @@ public class GachaSpin
 {
     private static Random generator = new Random();
 
-    public GachaSpin()
-    {
-
-    }
-
     public static string Gacha()
     {
         int spinResult = generator.Next(1, 1001);

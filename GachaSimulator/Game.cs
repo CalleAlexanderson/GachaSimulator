@@ -23,7 +23,7 @@ public class Game
             }
             else if (input == "inventory")
             {
-                Inventory.CheckInventory();
+                inventory.CheckInventory();
             }
             else if (input == "market")
             {
@@ -32,6 +32,10 @@ public class Game
             else if (input == "bounties")
             {
                 Bounty.Bounties();
+            }
+            else if (input == "sell")
+            {
+                SilkRoad.Sell(inventory);
             }
         }
     }

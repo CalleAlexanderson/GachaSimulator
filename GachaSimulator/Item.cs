@@ -1,17 +1,12 @@
 public class Item
 {
-    protected int value = 10;
+    protected int value;
     protected string rarity = "";
     protected string name = "";
 
-    public void ItemInfo()
-    {
-
-    }
-
     public override string ToString()
     {
-        return $"Value: {value} Rarity: {rarity}";
+        return $"{name}, Value: {value} Rarity: {rarity}";
     }
 }
 
