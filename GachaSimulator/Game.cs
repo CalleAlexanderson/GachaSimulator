@@ -5,9 +5,11 @@ public class Game
         Inventory inventory = new Inventory();
 
         string input = "";
+        Text.Introduction();
 
         while (input != "end")
         {
+            System.Console.WriteLine($"You currently own {Inventory.gold} gold");
             input = Console.ReadLine();
             if (input.Length >= 4 && input.Substring(0, 4) == "spin")
             {
@@ -15,11 +17,15 @@ public class Game
                 string number = input.Substring(4, input.Length - 4);
                 int result;
                 bool converted = int.TryParse(number, out result); //tar det nummer man skriver in och gör till int
-
-                for (int i = 0; i < result; i++)
+                if (Inventory.gold >= 200 * result)
                 {
-                    Inventory.UpdateInventory(GachaSpin.Gacha());
+                    for (int i = 0; i < result; i++)
+                    {
+                        Inventory.UpdateInventory(GachaSpin.Gacha());
+                        Inventory.gold = Inventory.gold - 200;
+                    }
                 }
+
             }
             else if (input == "inventory")
             {
@@ -36,6 +42,18 @@ public class Game
             else if (input == "sell")
             {
                 SilkRoad.Sell(inventory);
+            }
+            else if (input == "clear")
+            {
+                Console.Clear();
+            }
+            else if (input == "help")
+            {
+                Text.Instructions(); //visar vilka kommand/alnternativ man har
+            }
+            else if (input == "money") //temporär för testing
+            {
+                Inventory.gold = Inventory.gold + 10000;
             }
         }
     }

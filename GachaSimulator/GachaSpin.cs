@@ -15,6 +15,7 @@ public class GachaSpin
 
         if (spinResult >= 1 && spinResult <= 500)
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
             if (oneToEightSpin == 1)
             {
                 loot = "Longsword";

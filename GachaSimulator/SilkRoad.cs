@@ -9,6 +9,7 @@ public class SilkRoad
     public static void Market()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Gray;
         System.Console.WriteLine($"Common weapons in stock: \n Longsword {dr}\n Shortsword {dr}\n Club {dr}\n Battle Axe {dr}\n Pike {dr}\n Halbred {dr}\n Longbow {dr}\n Shortbow {dr}");
         Console.ForegroundColor = ConsoleColor.Green;
         System.Console.WriteLine(); //blankspace

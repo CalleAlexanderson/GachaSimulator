@@ -1,6 +1,7 @@
 public class Inventory
 {
     public static Dictionary<string, int> weaponInventory = new Dictionary<string, int>();
+    public static int gold = 1000;
 
     public Inventory()
     {
@@ -45,12 +46,12 @@ public class Inventory
 
     public void CheckInventory()
     {
-        // Console.Clear();
+        Console.Clear();
         for (int i = 0; i < weaponInventory.ToList().Count; i++)
         {
-            if (i <= 7) //skriver ut alla common vapen i vitt
+            if (i <= 7) //skriver ut alla common vapen i grått
             {
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
             else if (i >= 8 && i <= 15) //skriver ut alla uncommon vapen i grönt
             {
