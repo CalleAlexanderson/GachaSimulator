@@ -29,461 +29,48 @@ public class SilkRoad
 
     public static void Sell(Inventory inv)
     {
+        string[] weaponNames = File.ReadAllLines("weapons.txt"); //tar innehållet i txt filen och gör det till en string array
         string sellInput = Console.ReadLine();
 
-        if (sellInput == "Longsword") //common
+        for (int i = 0; i < weaponNames.Length; i++) //går igenom vapnena som finns
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
+            if (sellInput == weaponNames[i]) //kollar om sellInput är något av de vapnen som finns
             {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
+                if (Inventory.weaponInventory[sellInput] > 0)
+                {
+                    Inventory.weaponInventory[sellInput] -= 1; //tar bort vapnet från inventory
+                    System.Console.WriteLine($"you just sold a {sellInput}");
+                    AddGold(i); //skickar det vapnet man säljer vidare till AddGold
+                }
+                else if (Inventory.weaponInventory[sellInput] < 1)
+                {
+                    System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
+                }
             }
         }
+    }
 
-        else if (sellInput == "Shortsword") //common
+    public static void AddGold(int listPlace)
+    {
+        if (listPlace <= 8)
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
+            Inventory.gold = Inventory.gold + 100; //ger spelaren 100 guld
         }
-
-        else if (sellInput == "Club") //common
+        else if (listPlace <= 16 && listPlace > 8)
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
+            Inventory.gold = Inventory.gold + 150; //ger spelaren 150 guld
         }
-
-        else if (sellInput == "Battle Axe") //common
+        else if (listPlace <= 22 && listPlace > 16)
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
+            Inventory.gold = Inventory.gold + 250; //ger spelaren 250 guld
         }
-
-        else if (sellInput == "Pike") //common
+        else if (listPlace <= 30 && listPlace > 22)
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
+            Inventory.gold = Inventory.gold + 500; //ger spelaren 500 guld
         }
-
-        else if (sellInput == "Halbred") //common
+        else if (listPlace <= 35 && listPlace > 30)
         {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
+            Inventory.gold = Inventory.gold + 2000; //ger spelaren 2000 guld
         }
-
-        else if (sellInput == "Longbow") //common
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Shortbow") //common
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Mace") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-        else if (sellInput == "War Hammer") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Rapier") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Falchion") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Lance") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Man Catcher") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Crossbow") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Claymore") //uncommon
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Morningstar") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Katana") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Flamberge") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "War Scythe") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Glaive") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Repeating Crossbow") //rare
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Feng Huo Lun") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Mubuchae") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Lùjiǎodāo") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Shamshir") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Tachi") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Ninjatō") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Naginata") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Guandao") //epic
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Green Dragon Crescent Blade") //legendary
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Dáinsleif") //legendary
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Excalibur") //legendary
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Vajra") //legendary
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
-        else if (sellInput == "Gungnir") //legendary
-        {
-            if (Inventory.weaponInventory[sellInput] > 0)
-            {
-                Inventory.weaponInventory[sellInput] -= 1; //tar bort longsword från inventory
-                System.Console.WriteLine($"you just sold a {sellInput}");
-            }
-            else if (Inventory.weaponInventory[sellInput] < 1)
-            {
-                System.Console.WriteLine($"you don't own enough {sellInput}s to sell");
-            }
-        }
-
     }
 }

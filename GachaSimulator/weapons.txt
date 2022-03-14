@@ -1,0 +1,35 @@
+Longsword
+Shortsword
+Club
+Battle Axe
+Pike
+Halbred
+Longbow
+Shortbow
+Mace
+War Hammer
+Rapier
+Falchion
+Lance
+Man Catcher
+Crossbow
+Claymore
+Morningstar
+Katana
+Flamberge
+War Scythe
+Glaive
+Repeating Crossbow
+Feng Hou Lun
+Mubuchae
+Lùjiǎodāo
+Shamshir
+Tachi
+Ninjatō
+Naginata
+Guandao
+Green Dragon Crescent Blade
+Dáinsleif
+Excalibur
+Vajra
+Gungnir
