@@ -3,6 +3,7 @@ public class Game
     public static void Gameplay()
     {
         Inventory inventory = new Inventory();
+        Bounty bounty = new Bounty();
 
         string input = "";
         Text.Introduction();
@@ -37,7 +38,7 @@ public class Game
             }
             else if (input == "bounties")
             {
-                Bounty.Bounties();
+                bounty.Bounties();
             }
             else if (input == "sell")
             {
@@ -55,6 +56,48 @@ public class Game
             {
                 Inventory.gold = Inventory.gold + 10000;
             }
+            else if (input == "fight") //temporär för testing
+            {
+                bounty.TempName();
+            }
         }
+    }
+
+    public static void Fight(Player player, Monster monster)
+    {
+        QuickTimeEvents(monster);
+        //fixa timer, (göra quicktime events)
+
+
+    }
+
+    private static void QuickTimeEvents(Monster monster)
+    {
+        Random generator = new Random();
+
+        string letters = "abcdefghijklmnopqrstuvwxyz";
+        int length;
+        if (monster.GetDifficulty() == 2)
+        {
+            length = 3;
+        }
+        else if (monster.GetDifficulty() == 3)
+        {
+            length = 5;
+        }
+        else
+        {
+            length = 1;
+        }
+        char[] lett = new char[length];
+        for (int i = 0; i < lett.Length; i++)
+        {
+            int pos = generator.Next(letters.Length);
+            lett[i] = letters[pos];
+        }
+        string s = new String(lett);
+
+        System.Console.WriteLine(s);
+
     }
 }

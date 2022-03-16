@@ -9,9 +9,9 @@ public class GachaSpin
     {
         string[] namesOfWeapons = File.ReadAllLines("weapons.txt"); //tar innehållet i txt filen och gör det till en string array
         int spinResult = generator.Next(1, 1001);
-        int oneToEightSpin = generator.Next(1, 9);
-        int oneToSixSpin = generator.Next(1, 7);
-        int oneToFiveSpin = generator.Next(1, 6);
+        int oneToEightSpin = generator.Next(0, 8);
+        int oneToSixSpin = generator.Next(0, 6);
+        int oneToFiveSpin = generator.Next(0, 5);
         string loot = "";
 
         if (spinResult >= 1 && spinResult <= 500)

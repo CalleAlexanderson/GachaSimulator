@@ -19,10 +19,10 @@ public class SilkRoad
         System.Console.WriteLine($"Rare weapons in stock: \n Morningstar {dr}\n Katana {dr}\n Flamberge {dr}\n War Scythe {dr}\n Glaive {dr}\n Repeating Crossbow {dr}");
         Console.ForegroundColor = ConsoleColor.DarkMagenta;
         System.Console.WriteLine(); //blankspace
-        System.Console.WriteLine($"Epic weapons in stock: \n Feng Huo Lun {dr}\n Mubuchae {dr}\n Lùjiǎodāo {dr}\n Shamshir {dr}\n Tachi {dr}\n Ninjatō {dr}\n Naginata {dr}\n Guandao {dr}");
+        System.Console.WriteLine($"Epic weapons in stock: \n Feng Huo Lun {dr}\n Mubuchae {dr}\n Lujiaodao {dr}\n Shamshir {dr}\n Tachi {dr}\n Ninjato {dr}\n Naginata {dr}\n Guandao {dr}");
         Console.ForegroundColor = ConsoleColor.DarkYellow;
         System.Console.WriteLine(); //blankspace
-        System.Console.WriteLine($"Legendary weapons in stock: \n Green Dragon Crescent Blade {dr}\n Dáinsleif {dr}\n Excalibur {dr}\n Vajra {dr}\n Gungnir {dr}");
+        System.Console.WriteLine($"Legendary weapons in stock: \n Green Dragon Crescent Blade {dr}\n Dainsleif {dr}\n Excalibur {dr}\n Vajra {dr}\n Gungnir {dr}");
         Console.ForegroundColor = ConsoleColor.White;
         System.Console.WriteLine(); //blankspace
     }
