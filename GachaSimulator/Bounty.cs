@@ -11,11 +11,12 @@ public class Bounty
         };
         Console.Clear();
         System.Console.WriteLine("avaliable bounties:");
-        for (int i = 0; i < 3; i = i++)
+        for (int i = 0; i < 3; i++)
         {
             System.Console.WriteLine(WriteBounties(MonsterFabrik.Get(BountyTypes[i, generator.Next(0, 3)])));
-
         }
+
+
 
     }
 
