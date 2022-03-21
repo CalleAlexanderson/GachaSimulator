@@ -4,6 +4,7 @@ public class Monster
     protected int damage;
     protected int difficulty;
     private int hp;
+    protected string name;
     protected int Hitpoints
     {
         get
@@ -25,5 +26,10 @@ public class Monster
     public int GetDifficulty()
     {
         return difficulty;
+    }
+
+    public string GetName()
+    {
+        return name;
     }
 }

@@ -6,12 +6,16 @@ public class Game
         Bounty bounty = new Bounty();
 
         string input = "";
+        bool goldShowSwitch = false;
         Text.Introduction();
 
         while (input != "end")
         {
-            System.Console.WriteLine($"You currently own {Inventory.gold} gold");
-            input = Console.ReadLine();
+            if (goldShowSwitch == false)
+            {
+                System.Console.WriteLine($"You currently own {Inventory.gold} gold");
+            }
+            input = Console.ReadLine().ToLower();
             if (input.Length >= 4 && input.Substring(0, 4) == "spin")
             {
                 //tar input och gör så den bara kollar det som skrivs efter de första 4 bokstäverna
@@ -31,22 +35,27 @@ public class Game
             else if (input == "inventory")
             {
                 inventory.CheckInventory();
+                goldShowSwitch = true;
             }
             else if (input == "market")
             {
                 SilkRoad.Market();
+                goldShowSwitch = false;
             }
             else if (input == "bounties")
             {
                 bounty.Bounties();
+                goldShowSwitch = true;
             }
             else if (input == "sell")
             {
                 SilkRoad.Sell(inventory);
+                goldShowSwitch = false;
             }
             else if (input == "clear")
             {
                 Console.Clear();
+                goldShowSwitch = false;
             }
             else if (input == "help")
             {
