@@ -65,25 +65,73 @@ public class Game
             {
                 Inventory.gold = Inventory.gold + 10000;
             }
-            else if (input == "fight") //temporär för testing
+            else if (input.Length >= 4 && input.Substring(0, 4) == "take")
             {
-                bounty.TempName();
+                //tar input och gör så den bara kollar det som skrivs efter de första 4 bokstäverna
+                string quest = input.Substring(4, input.Length - 4);
+                string result = bounty.FightManager(quest);
+                if (result == "monster won")
+                {
+                    Console.Clear();
+                    System.Console.WriteLine("You Died");
+                    Console.ReadLine();
+                    input = "end";
+                }
             }
         }
     }
 
-    public static void Fight(Player player, Monster monster)
+    public static string Fight(Player player, Monster monster)
     {
-        QuickTimeEvents(monster);
-        //fixa timer, (göra quicktime events)
+        player.ResetHp();
+        while (monster.GetHp() != 0 && player.GetHp() != 0)
+        {
+            System.Console.WriteLine(player.GetHp());
+            System.Console.WriteLine(monster.GetHp());
+
+            string letters = QuickTimeEvents(monster);
+            System.Console.WriteLine(letters);
+            string input = Console.ReadLine();
+            if (input == letters)
+            {
+                monster.TakeDamage(player);
+            }
+            else
+            {
+                player.TakeDamage(monster);
+            }
+        }
+
+        if (player.GetHp() == 0)
+        {
+            return "monster won";
+        }
+        else if (monster.GetHp() == 0)
+        {
+            if (monster.GetDifficulty() == 3)
+            {
+                Inventory.gold = Inventory.gold + 2500;
+            }
+            else if (monster.GetDifficulty() == 2)
+            {
+                Inventory.gold = Inventory.gold + 1100;
+            }
+            else
+            {
+                Inventory.gold = Inventory.gold + 500;
+            }
+        }
+        Console.Clear();
+
+        return null;
 
 
+        //fixa timer
     }
 
-    private static void QuickTimeEvents(Monster monster)
+    private static string QuickTimeEvents(Monster monster)
     {
         Random generator = new Random();
-
         string letters = "abcdefghijklmnopqrstuvwxyz";
         int length;
         if (monster.GetDifficulty() == 2)
@@ -106,7 +154,6 @@ public class Game
         }
         string s = new String(lett);
 
-        System.Console.WriteLine(s);
-
+        return s;
     }
 }

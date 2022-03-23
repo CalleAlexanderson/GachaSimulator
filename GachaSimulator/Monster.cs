@@ -32,4 +32,14 @@ public class Monster
     {
         return name;
     }
+
+    public int GetHp()
+    {
+        return Hitpoints;
+    }
+
+    public void TakeDamage(Player player)
+    {
+        Hitpoints = Hitpoints - player.GetDamage();
+    }
 }
