@@ -1,8 +1,9 @@
 public class Bounty
 {
-    private Player player = new Player();
+    public List<Monster> currentBounties = new List<Monster>();
     public void Bounties()
     {
+        currentBounties.Clear();
         Random generator = new Random();
         string[,] BountyTypes = {
             {"leaper", "reaper", "thumper"},
@@ -14,11 +15,9 @@ public class Bounty
         System.Console.WriteLine("Avaliable bounties:");
         for (int i = 0; i < 3; i++)
         {
-            System.Console.WriteLine(WriteBounties(MonsterFabrik.Get(BountyTypes[i, generator.Next(0, 3)])));
+            currentBounties.Add(MonsterFabrik.Get(BountyTypes[i, generator.Next(0, 3)]));
+            System.Console.WriteLine(WriteBounties(currentBounties[i]));
         }
-
-
-
     }
 
     private object WriteBounties(Monster monster)
@@ -42,7 +41,7 @@ public class Bounty
         return bounty;
     }
 
-    public string FightManager(string monsterIn)
+    public string FightManager(string monsterIn, Player player)
     {
         Monster monster = MonsterFabrik.Get(monsterIn);
         return Game.Fight(player, monster); //ska kunna ta en bounty och sen ska denna aktiveras

@@ -19,7 +19,7 @@ public class Player
         }
 
     }
-    private string equipment;
+    private Weapon equipment;
 
     public int GetHp()
     {
@@ -39,5 +39,10 @@ public class Player
     public void TakeDamage(Monster monster)
     {
         currentHp = currentHp - monster.GetDamage();
+    }
+
+    public void ChangeEquipment(String weapon)
+    {
+
     }
 }

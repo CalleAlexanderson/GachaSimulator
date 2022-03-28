@@ -4,6 +4,7 @@ public class Game
     {
         Inventory inventory = new Inventory();
         Bounty bounty = new Bounty();
+        Player player = new Player();
 
         string input = "";
         bool goldShowSwitch = false;
@@ -69,7 +70,16 @@ public class Game
             {
                 //tar input och gör så den bara kollar det som skrivs efter de första 4 bokstäverna
                 string quest = input.Substring(4, input.Length - 4);
-                string result = bounty.FightManager(quest);
+                string result = "";
+
+                for (int i = 0; i < bounty.currentBounties.Count; i++)
+                {
+                    if (bounty.currentBounties[i].GetName().ToLower() == quest)
+                    {
+                        result = bounty.FightManager(quest, player);
+                    }
+                }
+
                 if (result == "monster won")
                 {
                     Console.Clear();
@@ -78,16 +88,41 @@ public class Game
                     input = "end";
                 }
             }
+            else if (input == "equip")
+            {
+                string equipInput = Console.ReadLine();
+
+                string[] equipableWeapons = File.ReadAllLines("weapons.txt");
+                for (int i = 0; i < equipableWeapons.Length; i++) //går igenom vapnena som finns
+                {
+                    if (equipInput == equipableWeapons[i]) //kollar om equipInput är något av de vapnen som finns
+                    {
+                        if (Inventory.weaponInventory[equipInput] > 0)
+                        {
+                            //remove current equipment + add it to inventory
+                            //player change equipment
+                            Inventory.weaponInventory[equipInput] -= 1; //tar bort vapnet från inventory
+                            System.Console.WriteLine($"you just equiped a {equipInput}");
+                        }
+                        else if (Inventory.weaponInventory[equipInput] < 1)
+                        {
+                            System.Console.WriteLine($"you don't own a {equipInput}");
+                        }
+                    }
+                }
+            }
         }
     }
 
     public static string Fight(Player player, Monster monster)
     {
         player.ResetHp();
+        Console.Clear();
         while (monster.GetHp() != 0 && player.GetHp() != 0)
         {
-            System.Console.WriteLine(player.GetHp());
-            System.Console.WriteLine(monster.GetHp());
+            System.Console.WriteLine($"Player hp: {player.GetHp()}");
+            System.Console.WriteLine($"{monster.GetName()} hp: {monster.GetHp()}");
+
 
             string letters = QuickTimeEvents(monster);
             System.Console.WriteLine(letters);
@@ -108,18 +143,23 @@ public class Game
         }
         else if (monster.GetHp() == 0)
         {
+            System.Console.WriteLine("You won");
             if (monster.GetDifficulty() == 3)
             {
+                System.Console.WriteLine("You got 2500 gold");
                 Inventory.gold = Inventory.gold + 2500;
             }
             else if (monster.GetDifficulty() == 2)
             {
+                System.Console.WriteLine("You got 1100 gold");
                 Inventory.gold = Inventory.gold + 1100;
             }
             else
             {
+                System.Console.WriteLine("You got 500 gold");
                 Inventory.gold = Inventory.gold + 500;
             }
+            Console.ReadLine();
         }
         Console.Clear();
 
