@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Mubuchae : Weapon
 {
-    public class Mubuchae
+    public Mubuchae()
     {
-        
+        name = "Mubuchae";
     }
 }

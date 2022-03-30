@@ -1,4 +1,7 @@
-public class Mace
+public class Mace : Weapon
 {
-
+    public Mace()
+    {
+        name = "Mace";
+    }
 }

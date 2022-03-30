@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Shamshir : Weapon
 {
-    public class Shamshir
+    public Shamshir()
     {
-        
+        name = "Shamshir";
     }
 }

@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Rares
+public class RepeatingCrossbow : Weapon
 {
-    public class RepeatingCrossbow
+    public RepeatingCrossbow()
     {
-        
+        name = "Repeating Crossbow";
     }
 }

@@ -1,9 +1,8 @@
 using System;
-
-namespace GachaSimulator.Weapons.Rares
+public class Glaive : Weapon
 {
-    public class Glaive
+    public Glaive()
     {
-        
+        name = "Glaive";
     }
 }

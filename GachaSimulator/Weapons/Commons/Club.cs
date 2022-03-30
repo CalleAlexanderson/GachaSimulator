@@ -1,4 +1,7 @@
-public class Club
+public class Club : Weapon
 {
-
+    public Club()
+    {
+        name = "Club";
+    }
 }

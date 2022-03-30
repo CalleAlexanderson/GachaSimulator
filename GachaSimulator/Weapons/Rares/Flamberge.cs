@@ -1,4 +1,7 @@
-public class Flamberge
+public class Flamberge : Weapon
 {
-
+    public Flamberge()
+    {
+        name = "Flamberge";
+    }
 }

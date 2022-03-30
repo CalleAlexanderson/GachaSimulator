@@ -97,12 +97,9 @@ public class Game
                 {
                     if (equipInput == equipableWeapons[i]) //kollar om equipInput är något av de vapnen som finns
                     {
-                        if (Inventory.weaponInventory[equipInput] > 0)
+                        if (Inventory.weaponInventory[equipInput] > 0) //kollar om man äger vapnet
                         {
-                            //remove current equipment + add it to inventory
-                            //player change equipment
-                            Inventory.weaponInventory[equipInput] -= 1; //tar bort vapnet från inventory
-                            System.Console.WriteLine($"you just equiped a {equipInput}");
+                            player.ChangeEquipment(WeaponFabrik.Get(equipInput.ToLower())); //byter equipment
                         }
                         else if (Inventory.weaponInventory[equipInput] < 1)
                         {
@@ -110,6 +107,10 @@ public class Game
                         }
                     }
                 }
+            }
+            else if (input == "unequip")
+            {
+                player.UnequipWeapin();
             }
         }
     }
@@ -130,6 +131,10 @@ public class Game
             if (input == letters)
             {
                 monster.TakeDamage(player);
+                if (player.GetEquimpent() != null)
+                {
+                    player.SpecialAttack(player.GetEquimpent());
+                }
             }
             else
             {

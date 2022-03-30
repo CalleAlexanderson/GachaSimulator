@@ -1,9 +1,9 @@
-using System;
-
-namespace GachaSimulator.Weapons.Legendaries
+public class Excalibur : Weapon
 {
-    public class Excalibur
+    public Excalibur()
     {
-        
+        name = "Excalibur";
+        extraHp = 50;
+        extraDamage = 18;
     }
 }

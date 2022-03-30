@@ -1,4 +1,7 @@
-public class Shortbow
+public class Shortbow : Weapon
 {
-
+    public Shortbow()
+    {
+        name = "Shortbow";
+    }
 }

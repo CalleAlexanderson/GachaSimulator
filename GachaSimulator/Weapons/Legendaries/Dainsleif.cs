@@ -1,9 +1,9 @@
-using System;
-
-namespace GachaSimulator.Weapons.Legendaries
+public class Dainsleif : Weapon
 {
-    public class Dainsleif
+    public Dainsleif()
     {
-        
+        name = "Dainsleif";
+        extraHp = 20;
+        extraDamage = 30;
     }
 }

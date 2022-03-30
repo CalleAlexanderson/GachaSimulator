@@ -1,9 +1,9 @@
-using System;
-
-namespace GachaSimulator.Weapons.Legendaries
+public class GreenDragonCrescentBlade : Weapon
 {
-    public class GreenDragonCrescentBlade
+    public GreenDragonCrescentBlade()
     {
-        
+        name = "Green Dragon Crescent Blade";
+        extraHp = 25;
+        extraDamage = 25;
     }
 }

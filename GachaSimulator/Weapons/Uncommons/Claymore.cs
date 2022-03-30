@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Uncommons
+public class Claymore : Weapon
 {
-    public class Claymore
+    public Claymore()
     {
-        
+        name = "Claymore";
     }
 }

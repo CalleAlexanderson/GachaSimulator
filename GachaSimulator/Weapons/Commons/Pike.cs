@@ -1,4 +1,7 @@
-public interface Pike
+public class Pike : Weapon
 {
-
+    public Pike()
+    {
+        name = "Pike";
+    }
 }

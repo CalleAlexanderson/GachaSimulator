@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Guandao : Weapon
 {
-    public class Guandao
+    public Guandao()
     {
-        
+        name = "Guandao";
     }
 }

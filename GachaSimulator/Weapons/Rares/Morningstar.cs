@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Rares
+public class Morningstar : Weapon
 {
-    public class Morningstar
+    public Morningstar()
     {
-        
+        name = "Morningstar";
     }
 }

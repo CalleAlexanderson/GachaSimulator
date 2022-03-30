@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Uncommons
+public class Falchion : Weapon
 {
-    public class Falchion
+    public Falchion()
     {
-        
+        name = "Falchion";
     }
 }

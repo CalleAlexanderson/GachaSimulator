@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Uncommons
+public class Lance : Weapon
 {
-    public class Lance
+    public Lance()
     {
-        
+        name = "Lance";
     }
 }

@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class FengHouLun : Weapon
 {
-    public class FengHouLun
+    public FengHouLun()
     {
-        
+        name = "Feng Hou Lun";
     }
 }

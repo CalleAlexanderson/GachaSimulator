@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Tachi : Weapon
 {
-    public class Tachi
+    public Tachi()
     {
-        
+        name = "Tachi";
     }
 }

@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Uncommons
+public class ManCatcher : Weapon
 {
-    public class ManCatcher
+    public ManCatcher()
     {
-        
+        name = "Man Catcher";
     }
 }

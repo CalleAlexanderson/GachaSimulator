@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Ninjato : Weapon
 {
-    public class Ninjato
+    public Ninjato()
     {
-        
+        name = "Ninjato";
     }
 }

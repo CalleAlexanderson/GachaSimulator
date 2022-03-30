@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons
+public class Rapier : Weapon
 {
-    public class Rapier
+    public Rapier()
     {
-        
+        name = "Rapier";
     }
 }

@@ -1,9 +1,9 @@
-using System;
-
-namespace GachaSimulator.Weapons.Legendaries
+public class Gungnir : Weapon
 {
-    public class Gungnir
+    public Gungnir()
     {
-
+        name = "Gungnir";
+        extraHp = 75;
+        extraDamage = 12;
     }
 }

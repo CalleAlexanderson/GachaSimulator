@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Rares
+public class Katana : Weapon
 {
-    public class Katana
+    public Katana()
     {
-        
+        name = "Katana";
     }
 }

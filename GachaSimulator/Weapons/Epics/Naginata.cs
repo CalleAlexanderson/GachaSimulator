@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Epics
+public class Naginata : Weapon
 {
-    public class Naginata
+    public Naginata()
     {
-        
+        name = "Naginata";
     }
 }

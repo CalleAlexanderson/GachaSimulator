@@ -1,9 +1,9 @@
-using System;
-
-namespace GachaSimulator.Weapons.Legendaries
+public class Vajra : Weapon
 {
-    public class Vajra
+    public Vajra()
     {
-        
+        name = "Vajra";
+        extraHp = 5;
+        extraDamage = 36;
     }
 }

@@ -1,9 +1,7 @@
-using System;
-
-namespace GachaSimulator.Weapons.Uncommons
+public class Crossbow : Weapon
 {
-    public class Crossbow
+    public Crossbow()
     {
-        
+        name = "Crossbow";
     }
 }
