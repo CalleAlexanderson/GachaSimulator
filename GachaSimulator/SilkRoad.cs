@@ -1,6 +1,14 @@
 public class SilkRoad
 {
-    static int dr = 1;
+    static int dr;
+    static int longswordX = 1;
+    static int shortswordX = 1;
+    static int clubX = 1;
+    static int battleAxeX = 1;
+    static int pikeX = 1;
+    static int halbredX = 1;
+    static int longbowX = 1;
+    static int shortbowX = 1;
     public static void UpdateMarket()
     {
 

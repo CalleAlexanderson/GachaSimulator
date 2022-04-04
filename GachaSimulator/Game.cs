@@ -1,5 +1,7 @@
 public class Game
 {
+
+    private static bool goldShowSwitch = false;
     public static void Gameplay()
     {
         Inventory inventory = new Inventory();
@@ -7,7 +9,6 @@ public class Game
         Player player = new Player();
 
         string input = "";
-        bool goldShowSwitch = false;
         Text.Introduction();
 
         while (input != "end")
@@ -117,6 +118,10 @@ public class Game
 
     public static string Fight(Player player, Monster monster)
     {
+        if (player.GetEquimpent() != null)
+        {
+            player.SpecialAttack(player.GetEquimpent(), player, monster);
+        }
         player.ResetHp();
         Console.Clear();
         while (monster.GetHp() != 0 && player.GetHp() != 0)
@@ -133,7 +138,7 @@ public class Game
                 monster.TakeDamage(player);
                 if (player.GetEquimpent() != null)
                 {
-                    player.SpecialAttack(player.GetEquimpent());
+                    player.SpecialAttack(player.GetEquimpent(), player, monster);
                 }
             }
             else
@@ -166,6 +171,7 @@ public class Game
             }
             Console.ReadLine();
         }
+        goldShowSwitch = false;
         Console.Clear();
 
         return null;

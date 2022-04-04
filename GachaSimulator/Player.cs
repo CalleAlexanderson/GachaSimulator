@@ -8,7 +8,7 @@ public class Player
     {
         currentHitpoints = maxHp;
     }
-    private int currentHp
+    private int CurrentHp
     {
         get
         {
@@ -16,7 +16,7 @@ public class Player
         }
         set
         {
-            currentHitpoints = Math.Max(value, 0);
+            currentHitpoints = Math.Clamp(value, 0, maxHp);
         }
 
     }
@@ -28,12 +28,12 @@ public class Player
     }
     public int GetHp()
     {
-        return currentHp;
+        return CurrentHp;
     }
 
     public void ResetHp()
     {
-        currentHp = maxHp;
+        CurrentHp = maxHp;
     }
 
     public int GetDamage()
@@ -41,9 +41,14 @@ public class Player
         return baseDamage + bonusDamage;
     }
 
+    public int GetBaseDamage()
+    {
+        return baseDamage;
+    }
+
     public void TakeDamage(Monster monster)
     {
-        currentHp = currentHp - monster.GetDamage();
+        CurrentHp = CurrentHp - monster.GetDamage();
     }
 
     public void ChangeEquipment(Weapon weapon)
@@ -71,8 +76,23 @@ public class Player
         }
     }
 
-    public void SpecialAttack(Weapon weapon)
+    public void SpecialAttack(Weapon weapon, Player player, Monster monster)
     {
-        weapon.BonusEffect();
+        weapon.BonusEffect(player, monster);
+    }
+
+    public void UpdateBonusDamage()
+    {
+        bonusDamage = equipment.GetExtraDamage();
+    }
+
+    public void UpdateHp(int heal)
+    {
+        CurrentHp = CurrentHp + heal;
+    }
+
+    public void UpdateMaxHp()
+    {
+        maxHp = 100 + equipment.GetExtraHp();
     }
 }

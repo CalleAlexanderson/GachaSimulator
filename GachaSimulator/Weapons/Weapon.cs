@@ -3,7 +3,7 @@ public class Weapon
     protected int extraHp;
     protected int extraDamage;
     protected string name;
-    public virtual void BonusEffect()
+    public virtual void BonusEffect(Player player, Monster monster)
     {
 
     }
