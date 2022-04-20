@@ -51,7 +51,12 @@ public class Game
             }
             else if (input == "sell")
             {
-                SilkRoad.Sell(inventory);
+                SilkRoad.Sell();
+                goldShowSwitch = false;
+            }
+            else if (input == "buy")
+            {
+                SilkRoad.Buy();
                 goldShowSwitch = false;
             }
             else if (input == "clear")
@@ -124,6 +129,7 @@ public class Game
         }
         player.ResetHp();
         Console.Clear();
+        Text.FightInstructions();
         while (monster.GetHp() != 0 && player.GetHp() != 0)
         {
             System.Console.WriteLine($"Player hp: {player.GetHp()}");

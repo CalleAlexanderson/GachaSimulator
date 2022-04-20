@@ -11,7 +11,7 @@ public class Bounty
             { "behemoth", "leviathan", "wendigo" }
         };
         Console.Clear();
-        System.Console.WriteLine("Bounties structure\nMonster name\nDifficulty level(higher = strnger)\nGold reward upon completion\n");
+        System.Console.WriteLine("Bounties structure:\nMonster name\nDifficulty level(higher = strnger)\nGold reward upon completion\n");
         System.Console.WriteLine("Avaliable bounties:");
         for (int i = 0; i < 3; i++)
         {

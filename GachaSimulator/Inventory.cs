@@ -1,3 +1,4 @@
+using System.ComponentModel;
 public class Inventory
 {
     public static Dictionary<string, int> weaponInventory = new Dictionary<string, int>();
@@ -11,6 +12,7 @@ public class Inventory
         {
             weaponInventory.Add(wNames[i], 0); //gör en ny plats i weaponInventory
         }
+        SilkRoad.FixMarket(wNames);
     }
 
     public void CheckInventory()

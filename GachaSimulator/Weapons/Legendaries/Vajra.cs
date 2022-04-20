@@ -4,14 +4,14 @@ public class Vajra : Weapon
     {
         name = "Vajra";
         extraHp = 5;
-        extraDamage = 36;
+        extraDamage = 32;
     }
 
     public override void BonusEffect(Player player, Monster monster)
     {
         int gold = Inventory.gold;
 
-        int goldDmg = gold / 200;
+        int goldDmg = gold / 300;
 
         extraDamage = 36 + goldDmg;
 
